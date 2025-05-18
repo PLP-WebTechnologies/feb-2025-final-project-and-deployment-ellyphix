@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>Shopping Cart</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="contact.html">Contact</a>
+    <a href="profile.html">Profile</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+<main>
+  <section>
+    <h2>Your Selected Courses</h2>
+    <ul id="cart-items">
+      <!-- Cart items will appear here -->
+    </ul>
+    <p id="total">Total: KES 0</p>
+    <button onclick="checkout()">Proceed to Checkout</button>
+  </section>
+</main>
+<footer>&copy; 2025 LearnTech</footer>
+<script src="script.js"></script>
+</body>
+</html>
+<script>
+  // JavaScript code to handle cart functionality
+  function displayCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItems = document.getElementById('cart-items');
+    const totalElement = document.getElementById('total');
+    let total = 0;
+
+    cartItems.innerHTML = '';
+
+    cart.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.name} - KES ${item.price}`;
+      cartItems.appendChild(li);
+      total += item.price;
+    });
+
+    totalElement.textContent = `Total: KES ${total}`;
+  }
+
+  function checkout() {
+    window.location.href = 'checkout.html';
+  }
+
+  // Call the function to display the cart on page load
+  displayCart();
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Our Courses</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="contact.html">Contact</a>
+    <a href="profile.html">Profile</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+<main>
+  <section class="product-grid">
+    <!-- Each div is a course -->
+    <div class="product"><img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg" alt=""><h4>HTML & CSS</h4><p>KES 1200</p><button onclick="addToCart('HTML & CSS', 1200)">Add to Cart</button></div>
+    <div class="product"><img src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg" alt=""><h4>JavaScript</h4><p>KES 1500</p><button onclick="addToCart('JavaScript', 1500)">Add to Cart</button></div>
+    <div class="product"><img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg" alt=""><h4>Python Programming</h4><p>KES 1500</p><button onclick="addToCart('Python Programming', 1500)">Add to Cart</button></div>
+    <div class="product"><img src="https://images.pexels.com/photos/5380665/pexels-photo-5380665.jpeg" alt=""><h4>ReactJS</h4><p>KES 2000</p><button onclick="addToCart('ReactJS', 2000)">Add to Cart</button></div>
+    <div class="product"><img src="https://images.pexels.com/photos/3861959/pexels-photo-3861959.jpeg" alt=""><h4>Node.js & Express</h4><p>KES 2000</p><button onclick="addToCart('Node.js & Express', 2000)">Add to Cart</button></div>
+    <div class="product"><img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg" alt=""><h4>UI/UX Design</h4><p>KES 1800</p><button onclick="addToCart('UI/UX Design', 1800)">Add to Cart</button></div>
+    <div class="product"><img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg" alt=""><h4>Cybersecurity</h4><p>KES 2500</p><button onclick="addToCart('Cybersecurity', 2500)">Add to Cart</button></div>
+    <div class="product"><img src="https://images.pexels.com/photos/1181248/pexels-photo-1181248.jpeg" alt=""><h4>DevOps Fundamentals</h4><p>KES 2200</p><button onclick="addToCart('DevOps Fundamentals', 2200)">Add to Cart</button></div>
+    <div class="product"><img src="https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg" alt=""><h4>Data Analysis</h4><p>KES 2100</p><button onclick="addToCart('Data Analysis', 2100)">Add to Cart</button></div>
+    <div class="product"><img src="https://images.pexels.com/photos/3861954/pexels-photo-3861954.jpeg" alt=""><h4>Machine Learning</h4><p>KES 2800</p><button onclick="addToCart('Machine Learning', 2800)">Add to Cart</button></div>
+  </section>
+</main>
+<footer>&copy; 2025 LearnTech</footer>
+<script src="script.js"></script>
+</body>
+</html>
+<script>
+  // JavaScript code to handle adding items to the cart
+  function addToCart(courseName, coursePrice) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name: courseName, price: coursePrice });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${courseName} has been added to your cart!`);
+  }
+    // Function to update the cart count in the navigation bar
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = document.querySelector('.cart-count');
+        cartCount.textContent = cart.length;
+        }
+    // Call the function to update the cart count on page load
+    updateCartCount();
+</script>

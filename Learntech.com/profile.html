@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Profile</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>👤 Profile Page</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+<main>
+  <p><strong>Name:</strong> John Doe</p>
+  <p><strong>Email:</strong> johndoe@example.com</p>
+  <div class="auth-buttons">
+    <button>Login</button>
+    <button>Sign Up</button>
+  </div>
+</main>
+<footer>&copy; 2025 LearnTech</footer>
+</body>
+</html>
+<script>
+  // Consolidated JavaScript code to handle profile functionality
+  const user = JSON.parse(localStorage.getItem('user')) || { name: 'Guest', email: '' };
+  document.querySelector('main').innerHTML = `
+    <p><strong>Name:</strong> ${user.name}</p>
+    <p><strong>Email:</strong> ${user.email}</p>
+    <div class="auth-buttons">
+      <button onclick="login()">Login</button>
+      <button onclick="signUp()">Sign Up</button>
+    </div>
+  `;
+  function login() {
+    const name = prompt('Enter your name:');
+    const email = prompt('Enter your email:');
+    localStorage.setItem('user', JSON.stringify({ name, email }));
+    location.reload();
+  }
+  function signUp() {
+    const name = prompt('Enter your name:');
+    const email = prompt('Enter your email:');
+    localStorage.setItem('user', JSON.stringify({ name, email }));
+    location.reload();
+  }
+</script>
+
