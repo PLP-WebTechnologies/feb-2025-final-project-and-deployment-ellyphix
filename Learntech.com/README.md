@@ -1,13 +1,11 @@
 # LearnTech - Online Course Ecommerce Website 🎓🛒
 
-Welcome to **LearnTech**, a fully responsive and interactive educational e-commerce website built with HTML5, CSS3, and JavaScript. This project mimics popular platforms like Jumia but focuses on selling **online tech courses** instead of physical products.
+Welcome to **LearnTech**, a fully responsive and interactive educational e-commerce website built with HTML5, CSS3, and JavaScript. This project focuses on selling **online tech courses** instead of physical products.
 
 ---
 
 ## 🚀 Live Demo
-🌐 [View Live Site](https://yourusername.github.io/learntech-ecommerce/)  
-_(Replace with actual link after deployment)_
-
+🌐[ [View Live Site](https://classy-churros-33cf3f.netlify.app/)]
 ---
 
 ## 📁 Project Structure
@@ -52,5 +50,5 @@ learntech-ecommerce/
 1. **Clone the Repository**
 
 ```bash
-git clone https://github.com/yourusername/learntech-ecommerce.git
+git clone https://github.com/ellyphix/learntech-ecommerce.git
 cd learntech-ecommerce
